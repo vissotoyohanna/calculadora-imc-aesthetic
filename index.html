@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Jornada | Calculadora de IMC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="washi-tape"></div> 
+
+        <h1>Minha Jornada </h1>
+        
+        <div id="telaFormulario" class="form-section">
+            <div class="input-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" placeholder="Ex: 22">
+            </div>
+            <div class="input-group">
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" placeholder="Ex: 1.54" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="pesoInicial">Peso Inicial (kg):</label>
+                <input type="number" id="pesoInicial" placeholder="Ex: 60.0" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="pesoAtual">Peso Atual (kg):</label>
+                <input type="number" id="pesoAtual" placeholder="Ex: 57.0" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="pesoMeta">Peso Meta (kg):</label>
+                <input type="number" id="pesoMeta" placeholder="Ex: 45.0" step="0.1">
+            </div>
+            
+            <button onclick="calcular()">Calcular e Atualizar ✨</button>
+        </div>
+
+        <div id="telaResultado" class="hidden">
+            <h2 id="resultadoIMC">Seu IMC é...</h2>
+            <p id="classificacaoIMC" class="badge">Classificação</p>
+
+            <div class="dashboard-metas">
+                <h3 id="tituloMeta">Resumo da Meta </h3>
+                <div class="stats">
+                    <div class="stat-box">
+                        <span id="labelAlcancado">Alcançado</span>
+                        <strong id="pesoAlcancado">0 kg</strong>
+                    </div>
+                    <div class="stat-box">
+                        <span>Faltam</span>
+                        <strong id="pesoFalta">0 kg</strong>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-label" id="porcentagemDesempenho">
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="barraProgresso"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="voltar()" class="btn-voltar">Refazer Cálculo </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

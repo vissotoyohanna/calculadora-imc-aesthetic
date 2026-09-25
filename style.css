@@ -1,0 +1,245 @@
+/* paleta de cores e estilo base */
+:root {
+    --bg-color: #fdf6f8;
+    --card-bg: #ffffff;
+    --text-main: #5c4b51;
+    --pink-primary: #f4b6c2;
+    --pink-light: #fce4ec;
+    --pink-dark: #e2859e;
+    --washi-tape: #ffd1dc;
+}
+
+body {
+    background-color: var(--bg-color);
+    /* fundo estilo página de bullet journal */
+    background-image: radial-gradient(var(--pink-light) 2px, transparent 2px);
+    background-size: 20px 20px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* o "cartão" de papel */
+.container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    /* sombra suave e borda tracejada estilo recorte */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.04); 
+    border: 2px dashed var(--pink-light);
+    position: relative;
+}
+
+/* efeito da fita adesiva decorada */
+.washi-tape {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 130px;
+    height: 35px;
+    background-color: var(--washi-tape);
+    opacity: 0.85;
+    /* cortando as pontas para parecer rasgada */
+    clip-path: polygon(0 5%, 100% 0, 96% 100%, 3% 95%);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: var(--pink-dark);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+/* estilos do Formulário */
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: var(--text-main);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--pink-light);
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fffafb;
+    font-size: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--pink-light);
+    border-radius: 25px; 
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fffafb;
+    font-size: 1rem;
+    text-align: center; 
+    color: var(--pink-dark);
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--pink-primary);
+    color: white;
+    border: none;
+    border-radius: 25px; 
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(244, 182, 194, 0.4); 
+}
+
+button:hover {
+    background-color: var(--pink-dark);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(226, 133, 158, 0.5);
+}
+
+/* ocultar elementos */
+.hidden {
+    display: none !important;
+}
+
+/* área de resultados */
+#resultado {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px dashed var(--pink-light);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#resultadoIMC {
+    margin: 0 0 10px 0;
+    color: var(--text-main);
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background-color: var(--pink-light);
+    color: var(--pink-dark);
+    border-radius: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+}
+
+/* caixinhas de estatísticas */
+.dashboard-metas h3 {
+    font-size: 1.2rem;
+    color: var(--pink-dark);
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background-color: #fffafb;
+    border: 1px solid var(--pink-light);
+    border-radius: 10px;
+    padding: 15px 10px;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.stat-box span {
+    display: block;
+    font-size: 0.85em;
+    color: #888;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.stat-box strong {
+    font-size: 1.3em;
+    color: var(--pink-dark);
+}
+
+/* barra de progresso */
+.progress-container {
+    background-color: #fffafb;
+    border: 1px solid var(--pink-light);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--text-main);
+    font-size: 0.9em;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 18px;
+    background-color: var(--pink-light);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--pink-primary);
+    width: 0%; 
+    transition: width 0.8s ease-out;
+    border-radius: 10px;
+}
+
+.btn-voltar {
+    background-color: var(--pink-light);
+    color: var(--pink-dark);
+    margin-top: 25px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.03);
+}
+
+.btn-voltar:hover {
+    background-color: #f9d8e0;
+    color: var(--text-main);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.08);
+}
